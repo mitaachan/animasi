@@ -104,15 +104,10 @@ const OpeningAnimation = ({ animateOut }) => {
             </path>
             <rect x="10" y="475.571" fill="#fefae9" width="180" height="4" />
           </svg>
-
-
-
           <div className="MUNNA cakeText">
-            <h1 className="MUNNA cakeText-title">Happy 18th Birthday!</h1>
-            <div className="MUNNA cakeText-name">Trisha <div className="MUNNA cakeText-kitty-bow"></div></div>
+            <h1 className="MUNNA cakeText-title">Happy 23th Birthday,</h1>
+            <div className="MUNNA cakeText-name">Mitachan <div className="MUNNA cakeText-kitty-bow"></div></div>
           </div>
-
-
         </div>
       </div>
     </main>
