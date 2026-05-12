@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import orihime from '../assets/orihime.jpg'
+import foto from '../assets/foto.jpeg'
 import { GiCrossMark } from 'react-icons/gi'
 
 const BookCanvas = ({ active, setActive }) => {
@@ -41,7 +41,7 @@ const BookCanvas = ({ active, setActive }) => {
 
                     {/* User Image remains the same */}
                     <div className="userImg">
-                        <img src={orihime} alt="Recipient's Photo" />
+                        <img src={foto} alt="Recipient's Photo" />
                     </div>
 
                     {/* New Hello Kitty themed decoration */}
@@ -63,13 +63,13 @@ const BookCanvas = ({ active, setActive }) => {
                 <div className="card2">
                     <div className="card2-content">
                         <h3 className="card2-recipient">
-                            To You!
+                            To My Beloved, Mitachan
                         </h3>
 
                         {/* Swapping back to H2 to match the original CSS targeting */}
                         <div className="card2-message-text italic">
                             <article style={{ marginBottom: '8px' }}>Happy Birthday, Mitachan ❤️</article>
-                            <article style={{ marginBottom: '10px' }}>From the moment we met, something in my life shifted—like the universe quietly guiding me toward someone meant for me.You brought warmth into the parts of me I didn’t even know were cold, And you expanded my days with a dimension I can only call my own.</article>
+                            <article style={{ marginBottom: '10px' }}>From the moment we met, something in my life shifted, like the universe quietly guiding me toward someone meant for me. You brought warmth into the parts of me I didn’t even know were cold, and you expanded my days with a dimension I can only call my own.</article>
                             <article style={{ marginBottom: '10px' }}>On your birthday, I just want you to know this: I want you with me in every chapter, every storm, every sunshine, every tomorrow. No matter what comes, I’ll be on your side—always. I’ll choose you, protect you, stand with you, and love you in ways that remind you you’re never alone.</article>
                             <article style={{ marginBottom: '10px' }}>You’re not just another year older today… <br />
                                 you’re the reason my life feels softer, brighter, and endlessly worth living. Happy Birthday.</article>
@@ -91,7 +91,7 @@ const BookCanvas = ({ active, setActive }) => {
                         <div className="confetti-dots"></div>
 
                         <p className="signature">
-                            Your Best Friend, Rexon
+                            Your Boyfriend, Faza.
                         </p>
                     </div>
                 </div>

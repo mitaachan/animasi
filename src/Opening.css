@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap');
 
 #CakeWrapper {
     width: 400px;
@@ -376,7 +376,6 @@
     color: #8b6a60;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-style: italic;
     text-align: center;
 
     h1 {
@@ -396,56 +395,49 @@
     top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Centered and clean */
+    width: 90vw; /* Mengambil 90% lebar layar agar ada margin di kiri-kanan */
+    max-width: 500px; /* Batas lebar maksimal di desktop */
     opacity: 0;
-    /* Starts hidden */
     visibility: hidden;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Quicksand', sans-serif;
     z-index: 10002;
-
-    /* Animation: Custom cubic-bezier reveal after 6.8s */
     animation: textAppear 1.2s cubic-bezier(0.23, 1, 0.32, 1) 6.8s forwards;
 }
 
 /* --- Cake Text Title (Happy 18th Birthday!) --- */
 .cakeText .cakeText-title {
-    font-size: 45px;
-    /* Large and prominent */
-    line-height: 1;
+    /* Font akan berukuran antara 20px hingga 32px tergantung lebar layar */
+    font-size: clamp(20px, 5vw, 32px); 
+    line-height: 1.2;
     color: #8B0000;
-    /* Deeper Hello Kitty pink */
     font-weight: 700;
     text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-    /* Soft pink glow */
+    margin: 0 auto;
 }
 
-/* --- Cake Text Name (Ahona) --- */
+/* --- Cake Text Name (Mitachan) --- */
 .cakeText .cakeText-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #8b0000;
-    /* Hello Kitty Pink */
-    text-transform: uppercase;
-    letter-spacing: 5px;
+    font-family: 'Pacifico', cursive; /* Menggunakan font bersambung yang elegan */
+    font-size: clamp(2.5em, 8vw, 4em); /* Ukuran font dinamis menyesuaikan layar */
+    font-weight: 400;
+    margin-top: 10px;
+    color: #961212;
+    display: inline-flex; /* Kunci agar nama dan paus sejajar sempurna */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Jarak antara teks dan icon paus */
+    position: relative;
     opacity: 0;
-    transform: translateY(-20px);
-    animation: nameDrop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 7.4s forwards;
+    transform: translateX(-50px) scale(0.9);
+    animation: ribbonFadeIn 1s cubic-bezier(0.65, 0.05, 0.36, 1) 7.4s forwards;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
 }
 
-/* --- Cake Text Kitty Bow Decoration --- */
-.cakeText .cakeText-kitty-bow {
-    position: absolute;
-    top: 8px;
-    rotate: 46deg;
-    right: 80px;
-    width: 80px;
-    height: 50px;
-    background-image: url('/src/assets/ribbonImg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 10;
+/* --- Cake Text Whale Decoration --- */
+.cakeText .cakeText-whale {
+    display: inline-block;
+    font-size: clamp(35px, 8vw, 50px); /* Ukuran paus ikut dinamis (responsif) */
     opacity: 0;
     animation: bowWiggle 1s ease-in-out infinite alternate 7.4s forwards;
 }
@@ -511,18 +503,17 @@
 /* --- Cake Text Name (Ahona) --- */
 .cakeText .cakeText-name {
     /* New Font Style for Elegance */
-    font-family: 'Great Vibes', 'Dancing Script', cursive;
-    font-size: 3.5em;
-    /* Much larger for impact */
-    font-weight: 500;
-    margin-top: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2em, 12vw, 4em); 
+    font-weight: 400;
+    margin-top: 5px;
     color: #961212;
-    text-transform: capitalize;
-    letter-spacing: 0px;
+    display: inline-block; /* Agar container membungkus teks dengan pas */
+    position: relative;
     opacity: 0;
     transform: translateX(-50px) scale(0.9);
     animation: ribbonFadeIn 1s cubic-bezier(0.65, 0.05, 0.36, 1) 7.4s forwards;
-    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
     /* Soft glow */
 }
 
@@ -538,49 +529,5 @@
         opacity: 1;
         transform: translateX(0) scale(1);
         filter: blur(0);
-    }
-}
-
-
-
-
-
-@media screen and (max-width: 658px) {
-    #CakeWrapper {
-        width: auto;
-    }
-
-    .cakeText {
-        position: fixed;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    /* --- Cake Text Title (Happy 18th Birthday!) --- */
-    .cakeText .cakeText-title {
-        font-size: 36px;
-        color: #8b0000;
-        width: 300px;
-    }
-
-    .cakeText .cakeText-name {
-        font-size: 2.5em;
-        margin-top: 10px;
-        opacity: 0;
-        transform: translateY(-20px);
-        animation: nameDrop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 7.4s forwards;
-    }
-
-    .cakeText .cakeText-kitty-bow {
-        position: absolute;
-        top: 0px;
-        rotate: 46deg;
-        right: 70px;
-        width: 60px;
-        height: 50px;
-        background-image: url('/src/assets/ribbonImg.png');
-        background-size: contain;
-        background-repeat: no-repeat;
     }
 }

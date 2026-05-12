@@ -106,7 +106,7 @@ const OpeningAnimation = ({ animateOut }) => {
           </svg>
           <div className="MUNNA cakeText">
             <h1 className="MUNNA cakeText-title">Happy 23th Birthday,</h1>
-            <div className="MUNNA cakeText-name">Mitachan <div className="MUNNA cakeText-kitty-bow"></div></div>
+            <div className="MUNNA cakeText-name">Mitachan <div className="MUNNA cakeText-whale">🐳</div></div>
           </div>
         </div>
       </div>

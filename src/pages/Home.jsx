@@ -9,7 +9,7 @@ import smileIcon from '../assets/smiley_icon.png'
 import { Link } from "react-router";
 import BookCanvas from "../components/BookCanvas";
 import SmallLetter from "../components/SmallLetter";
-import orihime from "../assets/orihime.jpg";
+import foto from "../assets/foto.jpeg";
 
 const Home = () => {
     // ------------------- Hooks 
@@ -115,7 +115,7 @@ const Home = () => {
                     <div className="right">
                         <div className="box__account">
                             <div className="image">
-                                <img src={orihime} alt="" />
+                                <img src={foto} alt="" />
                             </div>
                             <div className="name">
                                 <i className="fa-solid fa-heart"></i>
@@ -163,22 +163,8 @@ const Home = () => {
                     <img src={decorate} alt="" width="100" />
                 </div>
 
-                <div className="smiley__icon">
-                    <img src={smileIcon} alt="" width="100" />
-                </div>
-
-
-
-
-
-
                 {/* =========================== BoxMail Canvas =============================== */}
                 <BookCanvas active={Active} setActive={SetActive} />
-
-                {/* ========================== Small letter from rajib ========================= */}
-                <section className="smallLetter absolute md:-bottom-26 -bottom-40 md:left-[45%] left-[50%] -translate-x-1/2" style={{ "--t": "15.6s" }}>
-                    <SmallLetter />
-                </section>
             </div>
         </>
     );
