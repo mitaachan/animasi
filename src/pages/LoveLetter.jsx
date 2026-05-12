@@ -30,7 +30,7 @@ const LoveLetter = () => {
         {
             id: 6,
             name: "Faza",
-            msg: "Ever since our we met, my heart knew where it wanted to stay— with you, in every soft moment, every smile, every quiet piece of forever.",
+            msg: "Ever since our we met, my heart knew where it wanted to stay with you, in every soft moment, every smile, every quiet piece of forever.",
         },
         {
             id: 7,

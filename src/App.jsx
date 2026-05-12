@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import './LoveLetter.css'
 import './BookCanvas.css'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
+import { createHashRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import LoveLetter from './pages/LoveLetter'
@@ -12,26 +12,30 @@ import MusicPlayer from './components/MusicPlayer'
 
 const App = () => {
 
-  // Menambahkan basename agar router mengenali rute di dalam /animasi/
-  const MyRoute = createBrowserRouter(
+  const MyRoute = createHashRouter(
     createRoutesFromElements(
       <Route>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />}></Route>
-          <Route path='love-Letter' element={<LoveLetter />}></Route>
+          <Route path='love-letter' element={<LoveLetter />}></Route>
           <Route path='test' element={<Test />}></Route>
         </Route>
       </Route>
-    ),
-    { basename: "/animasi" } 
+    )
   );
 
-  // ------------------ Logika Cake Loader 
-  const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
+  // 1. Cek apakah ada hash URL selain '#/' saat pertama kali dimuat
+  const isDirectLink = window.location.hash && window.location.hash !== '#/';
+
+  // 2. Set default state berdasarkan isDirectLink agar tidak ada layar putih berkedip
+  const [loading, setLoading] = useState(!isDirectLink);
+  const [showContent, setShowContent] = useState(isDirectLink);
   const [animateOut, setAnimateOut] = useState(false); 
 
   useEffect(() => {
+    // 3. Jika isDirectLink true (masuk ke /love-letter), hentikan useEffect di sini
+    if (isDirectLink) return;
+
     const handlePageLoad = () => {
       // Waktu jeda disesuaikan dengan durasi animasi kue bawaan template
       setTimeout(() => setAnimateOut(true), 8400);
@@ -46,15 +50,10 @@ const App = () => {
     }
 
     return () => window.removeEventListener("load", handlePageLoad);
-  }, []);
+  }, [isDirectLink]); // Tambahkan isDirectLink sebagai dependency
 
   return (
     <>
-      {/* FIX: TAMPIL LANGSUNG BARENG KUE
-        Kita ubah prop `startPlay` menjadi `true` secara permanen.
-        Ini akan membuat tombol musik langsung muncul (karena CSS sudah diupdate)
-        dan mencoba memutar lagu segera setelah halaman dimuat.
-      */}
       <MusicPlayer startPlay={true} />
 
       {
